@@ -1,0 +1,36 @@
+<svg width="40"
+     height="40"
+     viewBox="0 0 40 40"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient"
+                        x1="2.94192"
+                        y1="4.89955"
+                        x2="37.7772"
+                        y2="39.7345"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.15937"
+                  stop-color="#3BEA62"/>
+            <stop offset="0.5404"
+                  stop-color="#3C99CC"/>
+            <stop offset="0.93739"
+                  stop-color="#6B57FF"/>
+        </linearGradient>
+    </defs>
+
+    <circle cx="20"
+            cy="20"
+            r="18"
+            fill="url(#gradient)"/>
+
+    <text x="50%"
+          y="60%"
+          text-anchor="middle"
+          font-weight="bold"
+          dominant-baseline="middle"
+          fill="white"
+          font-size="12"
+          font-family="Arial">
+        S4J
+    </text>
+</svg>

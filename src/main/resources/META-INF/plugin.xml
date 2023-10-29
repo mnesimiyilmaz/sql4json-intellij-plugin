@@ -1,0 +1,50 @@
+<idea-plugin>
+    <name>SQL4Json</name>
+    <description><![CDATA[
+    <p>SQL4Json allows you to perform data selecting, filtering, and aggregating operations in json data using a query language similar to the SQL SELECT statement.</p>
+    <p>Please check out <a href="https://github.com/mnesimiyilmaz/sql4json">GitHub</a> page for more information.</p><br>
+
+    <p>Fully fledged query example:<p>
+    <code>
+    SELECT user.name AS userName,<br>
+    SUM(value)       AS total,<br>
+    COUNT(value)     AS cnt,<br>
+    COUNT(*)         AS count_including_nulls,<br>
+    MAX(value)       AS max_val,<br>
+    MIN(value)       AS min_val,<br>
+    AVG(value)       AS avg_val<br><br>
+
+    FROM $r.nested.object<br><br>
+
+    WHERE ((a > 5 AND x.z &lt; 10) OR c = 20)<br>
+        AND age IS NOT NULL<br>
+        AND isActive = true<br>
+        AND isDeleted IS NULL<br>
+        AND LOWER(name, 'en-US') LIKE '%cahit%'<br>
+        AND (some.number >= 20 OR COALESCE(some.other.number, 0) <= 10)<br>
+        AND TO_DATE(lasLogin, 'yyyy-MM-dd HH:mm:ss') &lt; NOW() <br><br>
+
+    GROUP BY user.name<br><br>
+
+    HAVING total > 5 OR avg_val < 3<br><br>
+
+    ORDER BY total DESC, userName
+    </code>
+    ]]></description>
+    <id>io.github.mnesimiyilmaz.sql4json-intellij-plugin</id>
+
+    <vendor url="https://github.com/mnesimiyilmaz">
+        mnesimiyilmaz
+    </vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="SQL4JsonQuery"
+                    icon="/icons/windowIcon.svg"
+                    factoryClass="io.github.mnesimiyilmaz.sql4jsonintellijplugin.SQL4JsonWindowFactory"
+                    secondary="false"
+                    anchor="bottom"/>
+    </extensions>
+
+</idea-plugin>
